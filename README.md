@@ -26,3 +26,29 @@ This command will create a `dist` folder with an `index.html` and an `index_bund
 Just like everybody else, we're using Webpack to bundle our code into one JavaScript file. `webpack.config.js` configures Webpack to start at `index.js` and follow its dependencies all the way through your codebase, compiling any files with a .js or .jsx extension to browser-friendly JavaScript (including any you've written using ES6) and any files with a .scss extension into CSS, then package it all up in one file. We're also using the `HtmlWebpackPlugin` to have Webpack automatically add a `<script>` tag to your index.html's `body`, linking up your newly bundled JavaScript. All that is what happens when you run `yarn build`.
 
 `yarn start`, on the other hand, uses `webpack-dev-server` to spin up a Node server at `http://localhost:8080` from which to serve your application, re-bundling your code and updating the page whenever you save changes.
+
+## Files and folders out of the box
+You're welcome to change the file structure as you see fit, but what you get out of the box is a simple structure that should suffice for a simple application.
+
+All your code goes inside `src` (pronounced "source"). `index.html` and `index.js` sit right inside `src`. `index.html` is the webpage that your app will be rendered in and `index.js` is that JavaScript that does the rendering.
+
+`src/components/` is where you'll keep your React components. So far you just have the one, named `App`, which just puts "Hello World!" on the page. Convention is to have `App` render your other components, like this:
+
+```javascript
+export default class App extends Component {
+    render() {
+        return (
+            <MyNewComponent />
+        )
+    }
+}
+```
+
+`src/sass/` comes with one file, `style.scss`, which gets included at the top of `index.js`. You can write all your SCSS in the one file, or add new files for more modular styling.
+
+If you take the latter option, be sure to include your SCSS files in the files containing the React components they're needed for with:
+
+```javascript
+import 'path/to/your/file.scss'
+```
+
