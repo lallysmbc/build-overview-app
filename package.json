@@ -7,7 +7,7 @@
   "author": "Gary Holland <garyhollandxyz@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --hot",
     "build": "webpack"
   },
   "devDependencies": {
