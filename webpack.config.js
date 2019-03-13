@@ -1,42 +1,41 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
-
-const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-    template: './src/index.html',
-    filename: 'index.html',
-    inject: 'body'
-})
+/*eslint-env node*/
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BabelPluginTransformReactJsx = require("@babel/plugin-transform-react-jsx");
+const BabelPluginProposalClassProperties = require("@babel/plugin-proposal-class-properties");
+const BabelPluginSyntaxDynamicImport = require("@babel/plugin-syntax-dynamic-import");
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve('dist'),
-        filename: 'index_bundle.js'
-    },
-    module: {
-        loaders: [
-            {   test: /\.jsx?$/, 
-                loader: 'eslint-loader', 
-                exclude: /node_modules/ 
-            }, 
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.jsx$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.scss$/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader']
-            }
-        ]
-    },
-    devServer: {inline: true},
-    plugins: [HtmlWebpackPluginConfig, new UglifyJSPlugin()]
-}
+  output: {
+    path: path.resolve(__dirname, "docs"),
+    publicPath: "/Scripts/Project/React/",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            babelrc: false,
+            plugins: [
+              BabelPluginTransformReactJsx,
+              BabelPluginProposalClassProperties,
+              BabelPluginSyntaxDynamicImport
+            ]
+          }
+        }
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html"
+    })
+  ]
+};
