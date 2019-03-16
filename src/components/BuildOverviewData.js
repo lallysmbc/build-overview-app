@@ -1,7 +1,7 @@
 import React, { Fragment, Component, Suspense } from 'react'
 import { fetchBuildData } from "../api";
 import { unstable_createResource as createResource } from "react-cache";
-import BuildInfoPage from './BuildInfo'
+import BuildInfoPage from './BuildInfo/BuildInfo'
 
 const buildOverview = createResource(fetchBuildData);
 

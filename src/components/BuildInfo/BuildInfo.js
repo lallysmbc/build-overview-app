@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
-import ProgressCircle from './ProgressCircle/ProgressCircle'
-
+import ProgressCircle from '../ProgressCircle/ProgressCircle'
 import "./BuildInfo.css";
 
 function BuildInfo (props) {
