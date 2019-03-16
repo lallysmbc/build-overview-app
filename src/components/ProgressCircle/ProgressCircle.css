@@ -1,0 +1,53 @@
+.perCirc {
+	position: relative;
+	text-align: center;
+	width: 110px;
+	height: 110px;
+	border-radius: 100%;
+	background-color: #00cc00;
+}
+
+.perCirc .perCircInner {
+	position: relative;
+	top: 5px;
+	left: 5px;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	background-color: white;
+}
+.perCirc .perCircInner div {
+	position: relative;
+	top: 34px;
+	color:#777;
+}
+
+.perCirc .perCircStat {
+	font-size: 30px;
+	line-height:1em;
+}
+
+.perCirc.orange {
+	background-color: #ffa500;
+}
+
+
+.perCirc.red {
+	background-color: red;
+}
+
+.progress-circle-container {
+	width: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.progress-circle-container h1 {
+	margin: 0;
+	padding-bottom: 15px;
+	color: #B3BFCD;
+	font-size: 20px;
+}

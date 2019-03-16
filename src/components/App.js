@@ -18,7 +18,6 @@ export default class App extends Component {
     render() {
         return (
             <Fragment>
-                <h1>Build Monitor</h1>
                 <Suspense maxDuration={1500} fallback={<Spinner />}>
                     <BuildOverview />
                 </Suspense>

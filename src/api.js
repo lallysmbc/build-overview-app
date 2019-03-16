@@ -14,7 +14,7 @@ async function responseAsDOM(response) {
   export async function fetchBuildData() {
       var hasError = false;
       const response = await fetch(
-        `http://localhost:57492//Home/GetBuildOverview`
+        `https://localhost:44327/Home/GetBuildOverview`
       ).catch(function() {
         hasError = true;
       });
