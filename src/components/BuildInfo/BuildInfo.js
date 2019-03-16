@@ -8,7 +8,7 @@ function BuildInfo (props) {
             <div className='build-info-header'>
                 <div>
                     <i className={props.buildData.IsJestCoverage ? 'devicon-react-original' : 'devicon-csharp-plain'}></i>
-                    <h1>DTS: Frontend</h1>
+                    <h1>{props.buildData.Name}</h1>
                     <p>Desciption this is an explanation of this project</p>
                 </div>
             </div>
@@ -36,26 +36,29 @@ function BuildInfo (props) {
                 <div className='title'>
                     <h1>Top 5 </h1>
                 </div>
-                <div class='top-five-list'>
-                    <div class='top-five-item'>
+                <div className='top-five-list'>
+                    <div className='top-five-item'>
                         <table>
                             <tbody>
                                 <tr>
                                     <th>Namespace</th>
-                                    <th>File</th>
-                                    <th>Percentage</th>
+                                    <th>Total Statements</th>
+                                    <th>Covered Statements</th>
+                                    <th>Coverage Percent</th>
                                 </tr>
                                 {!props.buildData.IsJestCoverage && props.buildData.Performance.BestDotNet.map(data =>
                                     <tr>
-                                        <th>{data.CoveragePercent}</th>
-                                        <th>{data.CoveredStatements}</th>
+                                        <th>{data.Namespace}</th>
                                         <th>{data.TotalStatements}</th>
+                                        <th>{data.CoveredStatements}</th>
+                                        <th>{data.CoveragePercent}</th>
                                     </tr>
                                 )}
                                 {props.buildData.IsJestCoverage && props.buildData.Performance.BestJest.map(data =>
                                     <tr>
                                         <th>{data.Branches}</th>
                                         <th>{data.Branches}</th>
+                                        <th>{data.Statements}</th>
                                         <th>{data.Statements}</th>
                                     </tr>
                                 )}
@@ -66,18 +69,20 @@ function BuildInfo (props) {
                     <div className='title'>
                         <h1>Worst 5 </h1>
                     </div>
-                    <div class='top-five-item'>
+                    <div className='top-five-item'>
                         <table>
                             <tbody>
                                 <tr>
                                     <th>Namespace</th>
-                                    <th>File</th>
-                                    <th>Percentage</th>
+                                    <th>Total Statements</th>
+                                    <th>Covered Statements</th>
+                                    <th>Coverage Percent</th>
                                 </tr>
                                 {!props.buildData.IsJestCoverage && props.buildData.Performance.WorstDotNet.map(data =>
                                     <tr>
-                                        <th>{data.CoveragePercent}</th>
+                                        <th>{data.Namespace}</th>
                                         <th>{data.CoveredStatements}</th>
+                                        <th>{data.TotalStatements}</th>
                                         <th>{data.TotalStatements}</th>
                                     </tr>
                                 )}
@@ -85,6 +90,7 @@ function BuildInfo (props) {
                                     <tr>
                                         <th>{data.Branches}</th>
                                         <th>{data.Branches}</th>
+                                        <th>{data.Statements}</th>
                                         <th>{data.Statements}</th>
                                     </tr>
                                 )}
