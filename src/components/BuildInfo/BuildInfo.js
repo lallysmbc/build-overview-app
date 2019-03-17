@@ -1,6 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { lazy, Suspense, Fragment } from 'react'
 import ProgressCircle from '../ProgressCircle/ProgressCircle'
 import "./BuildInfo.css";
+import Spinner from '..//Spinner/spinner'
+import JestData from '../AllJestData'
+
+const TopFive = lazy(() => 
+    import('../TopFive')
+)
 
 function BuildInfo (props) {
       return (
@@ -8,7 +14,7 @@ function BuildInfo (props) {
             <div className='build-info-header'>
                 <div>
                     <i className={props.buildData.IsJestCoverage ? 'devicon-react-original' : 'devicon-csharp-plain'}></i>
-                    <h1>{props.buildData.Name}</h1>
+                    <h1>{ props.buildData.Name }</h1>
                     <p>Desciption this is an explanation of this project</p>
                 </div>
             </div>
@@ -22,7 +28,7 @@ function BuildInfo (props) {
                                 <ProgressCircle percentage={props.buildData.DotNet.CoveragePercent} text='Coverage Percent'/>
                                 <ProgressCircle percentage={22} text='Total Statements'/>
                                 <ProgressCircle percentage={45} text='Covered Statements'/>
-                                <ProgressCircle percentage={97} text='Covered Statements'/>
+                                <ProgressCircle percentage={100} text='Covered Statements'/>
                             </div>
                         }
                         {props.buildData.IsJestCoverage && 
@@ -33,71 +39,21 @@ function BuildInfo (props) {
                                 <ProgressCircle percentage={97} text='Covered Statements'/>
                             </div>
                         }
-                <div className='title'>
-                    <h1>Top 5 </h1>
-                </div>
-                <div className='top-five-list'>
-                    <div className='top-five-item'>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Namespace</th>
-                                    <th>Total Statements</th>
-                                    <th>Covered Statements</th>
-                                    <th>Coverage Percent</th>
-                                </tr>
-                                {!props.buildData.IsJestCoverage && props.buildData.Performance.BestDotNet.map(data =>
-                                    <tr>
-                                        <th>{data.Namespace}</th>
-                                        <th>{data.TotalStatements}</th>
-                                        <th>{data.CoveredStatements}</th>
-                                        <th>{data.CoveragePercent}</th>
-                                    </tr>
-                                )}
-                                {props.buildData.IsJestCoverage && props.buildData.Performance.BestJest.map(data =>
-                                    <tr>
-                                        <th>{data.Branches}</th>
-                                        <th>{data.Branches}</th>
-                                        <th>{data.Statements}</th>
-                                        <th>{data.Statements}</th>
-                                    </tr>
-                                )}
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                    <div className='title'>
-                        <h1>Worst 5 </h1>
-                    </div>
-                    <div className='top-five-item'>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Namespace</th>
-                                    <th>Total Statements</th>
-                                    <th>Covered Statements</th>
-                                    <th>Coverage Percent</th>
-                                </tr>
-                                {!props.buildData.IsJestCoverage && props.buildData.Performance.WorstDotNet.map(data =>
-                                    <tr>
-                                        <th>{data.Namespace}</th>
-                                        <th>{data.CoveredStatements}</th>
-                                        <th>{data.TotalStatements}</th>
-                                        <th>{data.TotalStatements}</th>
-                                    </tr>
-                                )}
-                                {props.buildData.IsJestCoverage && props.buildData.Performance.WorstJest.map(data =>
-                                    <tr>
-                                        <th>{data.Branches}</th>
-                                        <th>{data.Branches}</th>
-                                        <th>{data.Statements}</th>
-                                        <th>{data.Statements}</th>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                    <Suspense maxDuration={2500} fallback={<Spinner />}>
+                        <TopFive
+                            Title='Top 5'
+                            Count={1}
+                        />
+                    </Suspense>
+                    <Suspense maxDuration={2500} fallback={<Spinner />}>
+                        <TopFive
+                            Title='Worst 5'
+                            Count={2}
+                        />
+                    </Suspense>
+                    {/* <Suspense maxDuration={2500} fallback={<Spinner />}>
+                        <JestData />
+                    </Suspense> */}
                 </div>
             </div>
         </Fragment>

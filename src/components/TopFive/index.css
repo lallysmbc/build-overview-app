@@ -1,0 +1,12 @@
+  
+  .top-five-item table {
+    width: 100%;
+  }
+
+  .top-five-item table tr:first-of-type {
+    color: #B3BFCD;
+  }
+
+  .top-five-item table tr {
+    font-size: 15px;
+  }

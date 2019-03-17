@@ -4,7 +4,6 @@
 	width: 110px;
 	height: 110px;
 	border-radius: 100%;
-	background-color: #00cc00;
 }
 
 .perCirc .perCircInner {
@@ -28,10 +27,13 @@
 	line-height:1em;
 }
 
+.perCirc.gold {
+	background-color: #FFD700;
+}
+
 .perCirc.orange {
 	background-color: #ffa500;
 }
-
 
 .perCirc.red {
 	background-color: red;
@@ -51,3 +53,53 @@
 	color: #B3BFCD;
 	font-size: 18px;
 }
+
+/* .perCirc {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	
+	margin: 25px 0 25px 25px;
+	color: rgba(255, 255, 255, 0.356);
+	text-decoration: none;
+	text-align: center;
+	line-height: 50px;
+	font-size: 12px;
+	font-family: sans-serif;
+  }
+  
+  .perCirc:after {
+	animation: shine 1.5s infinite linear alternate;
+	content: "";
+	position: absolute;
+	top: -110%;
+	left: -210%;
+	width: 200%;
+	height: 200%;
+	opacity: 0;
+	transform: rotate(30deg);
+	
+	background: rgba(255, 255, 255, 0.301);
+	background: linear-gradient(
+	  to right, 
+	  rgb(255, 255, 255) 0%,
+	  rgb(255, 255, 255) 0%,
+	  rgb(255, 255, 255) 0%,
+	  rgb(255, 255, 255) 0%
+	);
+  }
+  
+  .perCirc:active:after {
+	opacity: 0;
+  }
+  
+  @keyframes shine{
+	to {
+	  opacity: 1;
+	  top: -30%;
+	  left: -30%;
+	  transition-property: left, top, opacity;
+	  transition-duration: 0.7s, 0.7s, 0.15s;
+	  transition-timing-function: ease;
+	}
+  } */

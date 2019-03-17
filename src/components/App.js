@@ -1,5 +1,5 @@
 import React, {lazy, Suspense, Component, Fragment} from 'react'
-import Spinner from './spinner'
+import Spinner from './Spinner/spinner'
 
 const BuildOverview = lazy(() => 
     import('./BuildOverviewData')
@@ -8,11 +8,6 @@ const BuildOverview = lazy(() =>
 export default class App extends Component {
     constructor(){
         super()
-        this.state = {
-            test: false
-        }
-    }
-    componentWillMount() {
     }
 
     render() {

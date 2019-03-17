@@ -27,3 +27,38 @@ async function responseAsDOM(response) {
       return JSON.parse(text);
   }
   
+  export async function fetchTopFive(count) {
+    var hasError = false;
+    let url = `https://localhost:44327/Home/TopFive?`+count
+    console.log(url)
+    const response = await fetch(
+      url
+    ).catch(function() {
+      hasError = true;
+    });
+
+    if(hasError){
+      return {error: true};
+    }
+    const text = await readBodyAndDecode(response);
+
+    return JSON.parse(text);
+}
+
+export async function fetchJestTestData(count) {
+  var hasError = false;
+  let url = `https://localhost:44327/Home/AllJestData?`+count
+  console.log(url)
+  const response = await fetch(
+    url
+  ).catch(function() {
+    hasError = true;
+  });
+
+  if(hasError){
+    return {error: true};
+  }
+  const text = await readBodyAndDecode(response);
+
+  return JSON.parse(text);
+}

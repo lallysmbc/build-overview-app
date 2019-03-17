@@ -58,7 +58,6 @@ div {
 
   .overlay {
     width: 80%;
-    height: 600px;
     position: absolute;
     top: 175px;
     left: 10%;
@@ -70,6 +69,8 @@ div {
     -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
     box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
   }
 
   .overlay .overlay-container {
@@ -98,16 +99,4 @@ div {
     /* width: 25%;
     align-items: center;
     justify-content: center; */
-  }
-  
-  .top-five-item table {
-    width: 100%;
-  }
-
-  .top-five-item table tr:first-of-type {
-    color: #B3BFCD;
-  }
-
-  .top-five-item table tr {
-    font-size: 15px;
   }
