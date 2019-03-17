@@ -14,6 +14,7 @@ function BuildInfo (props) {
             <div className='build-info-header'>
                 <div>
                     <i className={props.buildData.IsJestCoverage ? 'devicon-react-original' : 'devicon-csharp-plain'}></i>
+                    <i className={props.buildData.GithubRepo ? 'devicon-github-plain' : 'devicon-gitlab-plain'}></i>
                     <h1>{ props.buildData.Name }</h1>
                     <p>Desciption this is an explanation of this project</p>
                 </div>
