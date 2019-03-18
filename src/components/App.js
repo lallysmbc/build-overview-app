@@ -1,19 +1,17 @@
-import React, {lazy, Suspense} from 'react'
-import Spinner from './Spinner/spinner'
+import React, { lazy, Suspense } from 'react'
+import Spinner from './Spinner'
 import AutoScroll from './AutoScroll'
 
-const BuildOverview = lazy(() => 
-    import('./BuildOverviewData')
-)
+const BuildOverview = lazy(() => import('./BuildOverviewData'))
 
 function App() {
-    return (
-        <AutoScroll>
-            <Suspense maxDuration={1500} fallback={<Spinner />}>
-                <BuildOverview />
-            </Suspense>
-        </AutoScroll>
-    )
+	return (
+		<AutoScroll>
+			<Suspense maxDuration={1500} fallback={<Spinner />}>
+				<BuildOverview />
+			</Suspense>
+		</AutoScroll>
+	)
 }
 
 export default App

@@ -1,24 +1,25 @@
-import React, {Component, Fragment} from 'react'
+import React, { Component, Fragment } from 'react'
 
-export class AutoScroll extends Component {
+class AutoScroll extends Component {
 	componentDidMount() {
-        this.timer = setInterval(
-            () => this.el.scrollIntoView({ duration: 60000, behavior: 'smooth' }),
-            5000,
-        );
+		this.timer = setInterval(() => this.el.scrollIntoView({ duration: 60000, behavior: 'smooth' }), 5000)
 	}
 
-    componentWillUnmount() {
-        clearInterval(this.timer);
-    }
+	componentWillUnmount() {
+		clearInterval(this.timer)
+	}
 
 	render() {
-        return (
-            <Fragment>
-                { this.props.children }
-                <div ref={el => { this.el = el; }} />
-            </Fragment>
-        )
+		return (
+			<Fragment>
+				{this.props.children}
+				<div
+					ref={el => {
+						this.el = el
+					}}
+				/>
+			</Fragment>
+		)
 	}
 }
 
