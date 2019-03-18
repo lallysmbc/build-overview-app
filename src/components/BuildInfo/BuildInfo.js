@@ -27,7 +27,7 @@ function BuildInfo (props) {
                         {!props.buildData.IsJestCoverage && 
                             <div className='progress-container'>
                                 <ProgressCircle percentage={props.buildData.DotNet.CoveragePercent} text='Coverage Percent'/>
-                                <ProgressCircle percentage={22} text='Total Statements'/>
+                                <ProgressCircle percentage={89} text='Total Statements'/>
                                 <ProgressCircle percentage={45} text='Covered Statements'/>
                                 <ProgressCircle percentage={100} text='Covered Statements'/>
                             </div>
@@ -36,8 +36,8 @@ function BuildInfo (props) {
                             <div className='progress-container'>
                                 <ProgressCircle percentage={props.buildData.Jest.Statements} text='Statements'/>
                                 <ProgressCircle percentage={props.buildData.Jest.Branches} text='Branches'/>
-                                <ProgressCircle percentage={56} text='Covered Statements'/>
-                                <ProgressCircle percentage={97} text='Covered Statements'/>
+                                <ProgressCircle percentage={props.buildData.Jest.Functions} text='Functions'/>
+                                <ProgressCircle percentage={props.buildData.Jest.Lines} text='Lines'/>
                             </div>
                         }
                     <Suspense maxDuration={2500} fallback={<Spinner />}>

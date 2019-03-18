@@ -9,8 +9,9 @@ class BuildOverview extends Component {
   constructor(){
     super()
     const buildData = buildOverview.read()
+    console.log(buildData)
     this.state = {
-      data: buildData,
+      data: buildData.ProjectOverview,
       order: 'newest',
       itemSelected: false,
       selectedItem: ''
@@ -55,17 +56,17 @@ class BuildOverview extends Component {
                       <p className="buildInfoBranch text-cutoff">
                           <span className="buildInfoHighlight">Code coverage</span>
                       </p>
-                      {(!build.IsJestCoverage) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">DotCoverVersion &darr; <span className="buildInfoHighlight">{build.DotNet.DotCoverVersion}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
-                      {(!build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Kind &darr; <span className="buildInfoHighlight">{build.DotNet.Kind}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
-                      {(!build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">CoveredStatements &darr; <span className="buildInfoHighlight">{build.DotNet.CoveredStatements}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
-                      {(!build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">TotalStatements &darr; <span className="buildInfoHighlight">{build.DotNet.TotalStatements}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
-                      {(!build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">CoveragePercent &darr; <span className="buildInfoHighlight">{build.DotNet.CoveragePercent}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(!build.IsJestCoverage) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">DotCoverVersion &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(!build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Kind &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(!build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">CoveredStatements &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(!build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">TotalStatements &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(!build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">CoveragePercent &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
 
-                      {(build.IsJestCoverage) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Statements &darr; <span className="buildInfoHighlight">{build.Jest.Statements}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
-                      {(build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Statements &darr; <span className="buildInfoHighlight">{build.Jest.Statements}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
-                      {(build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Statements &darr; <span className="buildInfoHighlight">{build.Jest.Statements}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
-                      {(build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Branches &darr; <span className="buildInfoHighlight">{build.Jest.Branches}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
-                      {(build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Branches &darr; <span className="buildInfoHighlight">{build.Jest.Branches}</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(build.IsJestCoverage) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Statements &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Statements &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Statements &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Branches &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
+                      {(build.IsJestCoverage ) && <p style={{color: '#FB1B45'}} className="buildInfo text-cutoff">Branches &darr; <span className="buildInfoHighlight">0</span><span style={{color: '#FB1B45'}}>-0.02%</span></p>}
                   </div>
               </div>
             ))}

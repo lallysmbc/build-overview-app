@@ -14,7 +14,7 @@ async function responseAsDOM(response) {
   export async function fetchBuildData() {
       var hasError = false;
       const response = await fetch(
-        `https://localhost:44327/Home/GetBuildOverview`
+        `http://localhost:57492/Home/GetBuildOverview`
       ).catch(function() {
         hasError = true;
       });
@@ -29,7 +29,7 @@ async function responseAsDOM(response) {
   
   export async function fetchTopFive(count) {
     var hasError = false;
-    let url = `https://localhost:44327/Home/TopFive?`+count
+    let url = `http://localhost:57492/Home/TopFive?`+count
     console.log(url)
     const response = await fetch(
       url
@@ -47,7 +47,7 @@ async function responseAsDOM(response) {
 
 export async function fetchJestTestData(count) {
   var hasError = false;
-  let url = `https://localhost:44327/Home/AllJestData?`+count
+  let url = `http://localhost:57492/Home/AllJestData?`+count
   console.log(url)
   const response = await fetch(
     url
