@@ -73,16 +73,7 @@ div {
     margin-bottom: 25px;
   }
 
-  .overlay .overlay-container {
-    width: 100%;
-  }
-
-  .overlay .overlay-container .title {
-    width: 100%;
-  }
-
-  
-  .overlay .overlay-container .title h1 {
+  .overlay h1 {
     color: #3AAB83;
     margin: 0;
     padding-left: 15px;
@@ -90,13 +81,7 @@ div {
     font-size: 32px;
   }
   
-  .overlay .overlay-container .progress-container {
+  .overlay .progress-container {
     display: flex;
     flex-direction: row;
-  }
-  
-  .overlay .overlay-container .progress-container div {
-    /* width: 25%;
-    align-items: center;
-    justify-content: center; */
   }

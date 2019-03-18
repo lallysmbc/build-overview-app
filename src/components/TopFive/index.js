@@ -10,9 +10,7 @@ function TopFive(props) {
 
     return (
         <Fragment>
-            <div className='title'>
-                <h1>{props.Title}</h1>
-            </div>
+            <h1>{props.Title}</h1>
             <div className='top-five-item'>
                 <table>
                     <tbody>
