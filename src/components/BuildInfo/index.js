@@ -12,37 +12,45 @@ const BuildInfo = props => {
 		? [
 				{
 					percentage: props.buildData.Jest.Statements,
-					text: 'Statements'
+					text: 'Statements',
+					nonPercentageValue: false
 				},
 				{
 					percentage: props.buildData.Jest.Branches,
-					text: 'Branches'
+					text: 'Branches',
+					nonPercentageValue: false
 				},
 				{
 					percentage: props.buildData.Jest.Functions,
-					text: 'Functions'
+					text: 'Functions',
+					nonPercentageValue: false
 				},
 				{
 					percentage: props.buildData.Jest.Lines,
-					text: 'Lines'
+					text: 'Lines',
+					nonPercentageValue: false
 				}
 		  ]
 		: [
 				{
 					percentage: props.buildData.DotNet.CoveragePercent,
-					text: 'Coverage Percent'
+					text: 'Coverage Percent',
+					nonPercentageValue: false
 				},
 				{
-					percentage: 89,
-					text: 'Total Statements'
+					percentage: props.buildData.DotNet.TotalStatements,
+					text: 'Total Statements',
+					nonPercentageValue: true
 				},
 				{
-					percentage: 45,
-					text: 'Covered Statements'
+					percentage: props.buildData.DotNet.CoveredStatements,
+					text: 'Covered Statements',
+					nonPercentageValue: true
 				},
 				{
-					percentage: 100,
-					text: 'Covered Statements'
+					percentage: props.buildData.DotNet.CoveredStatements,
+					text: 'Covered Statements',
+					nonPercentageValue: true
 				}
 		  ]
 

@@ -31,7 +31,8 @@ class ProgressCircle extends Component {
 		}
 
 		var curr = (100 * i) / 360
-		this.perCircStat.current.innerHTML = Math.round(curr) + '%'
+
+		this.props.nonPercentageValue ? this.perCircStat.current.innerHTML = Math.round(this.props.percentage) : this.perCircStat.current.innerHTML = Math.round(curr) + '%'
 
 		if (i <= 180) {
 			this.perCircContainer.current.style.backgroundColor = this.circleColour
