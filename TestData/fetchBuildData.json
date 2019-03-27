@@ -3,30 +3,136 @@
 		"Id": "1",
 		"Name": "DTS: Frontend",
 		"BuildNumber": "3.1234",
+		"IsJestCoverage": true,
 		"DotNet": null,
-		"Jest": null,
+		"Jest": {
+			"Statements":"100",
+			"Branches":"90",
+			"Functions":"20",
+			"Lines":"45"
+		},
 		"GithubRepo": true,
 		"LastPublishTime": "01/01/2001",
-		"Performance": null
+		"Performance": {
+			"WorstJest":	[
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				},
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				}
+			],
+			"BestJest": [
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				},
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				}
+			]
+		}
     },
     {
         "Id": "2",
 		"Name": "IAG: Webapp",
 		"BuildNumber": "1.34.544",
+		"IsJestCoverage": true,
 		"DotNet": null,
-		"Jest": null,
+		"Jest": {
+			"Statements":"89",
+			"Branches":"56",
+			"Functions":"29",
+			"Lines":"100"
+		},
 		"GithubRepo": true,
 		"LastPublishTime": "02/02/2002",
-		"Performance": null
+		"Performance": {
+			"WorstJest":	[
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				},
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				}
+			],
+			"BestJest": [
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				},
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				}
+			]
+		},
+		"IsJestCoverage": true
     },
     {
         "Id": "3",
 		"Name": "Additional Bins Coverage",
 		"BuildNumber": "45",
+		"IsJestCoverage": true,
 		"DotNet": null,
-		"Jest": null,
+		"Jest": {
+			"Statements":"96",
+			"Branches":"100",
+			"Functions":"63",
+			"Lines":"16"
+		},
 		"GithubRepo": true,
 		"LastPublishTime": "03/03/2003",
-		"Performance": null
+		"Performance": {
+			"WorstJest":	[
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				},
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				}
+			],
+			"BestJest": [
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				},
+				{
+					"Statements":"89",
+					"Branches":"90",
+					"Functions":"95",
+					"Lines":"99"
+				}
+			]
+		}
     }]
 }
