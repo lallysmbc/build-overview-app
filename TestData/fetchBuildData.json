@@ -1,0 +1,32 @@
+{
+	"ProjectOverview": [{
+		"Id": "1",
+		"Name": "DTS: Frontend",
+		"BuildNumber": "3.1234",
+		"DotNet": null,
+		"Jest": null,
+		"GithubRepo": true,
+		"LastPublishTime": "01/01/2001",
+		"Performance": null
+    },
+    {
+        "Id": "2",
+		"Name": "IAG: Webapp",
+		"BuildNumber": "1.34.544",
+		"DotNet": null,
+		"Jest": null,
+		"GithubRepo": true,
+		"LastPublishTime": "02/02/2002",
+		"Performance": null
+    },
+    {
+        "Id": "3",
+		"Name": "Additional Bins Coverage",
+		"BuildNumber": "45",
+		"DotNet": null,
+		"Jest": null,
+		"GithubRepo": true,
+		"LastPublishTime": "03/03/2003",
+		"Performance": null
+    }]
+}

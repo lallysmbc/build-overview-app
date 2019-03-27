@@ -1,3 +1,5 @@
+import build_data_json from '../TestData/fetchBuildData.json'
+
 const responseAsDOM = async response => {
 	const text = await response.text()
 	const parser = new DOMParser()
@@ -13,7 +15,8 @@ const readBodyAndDecode = async response => {
 
 export const fetchBuildData = async () => {
     if(process.env.STUBAPI){
-      return JSON.parse('')   
+      console.log(build_data_json)
+      return build_data_json   
     } else {
       const response = await fetch(`http://localhost:57492/Home/GetBuildOverview`)
 
