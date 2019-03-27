@@ -12,45 +12,57 @@ const readBodyAndDecode = async response => {
 }
 
 export const fetchBuildData = async () => {
-	const response = await fetch(`http://localhost:57492/Home/GetBuildOverview`)
+    if(process.env.STUBAPI){
+      return JSON.parse('')   
+    } else {
+      const response = await fetch(`http://localhost:57492/Home/GetBuildOverview`)
 
-	if (response.ok) {
-		const text = await readBodyAndDecode(response)
+      if (response.ok) {
+        const text = await readBodyAndDecode(response)
 
-		return JSON.parse(text)
-	}
+        return JSON.parse(text)
+      }
 
-	return {
-		error: true
-	}
+      return {
+        error: true
+      }
+  }
 }
 
 export const fetchTopFive = async count => {
-	const url = `http://localhost:57492/Home/TopFive?` + count
-	const response = await fetch(url)
+    if(process.env.STUBAPI){
+      return JSON.parse('')   
+    } else {
+      const url = `http://localhost:57492/Home/TopFive?` + count
+      const response = await fetch(url)
 
-	if (response.ok) {
-		const text = await readBodyAndDecode(response)
+      if (response.ok) {
+        const text = await readBodyAndDecode(response)
 
-		return JSON.parse(text)
-	}
+        return JSON.parse(text)
+      }
 
-	return {
-		error: true
-	}
+      return {
+        error: true
+      }
+  }
 }
 
 export const fetchJestTestData = async count => {
-	const url = `http://localhost:57492/Home/AllJestData?` + count
+  if(process.env.STUBAPI){
+    return JSON.parse('')   
+  } else {
+    const url = `http://localhost:57492/Home/AllJestData?` + count
 
-	const response = await fetch(url)
+    const response = await fetch(url)
 
-	if (response.ok) {
-		//TODO: This could well be incorrect and need reverting
-		return response.json()
-	}
+    if (response.ok) {
+      //TODO: This could well be incorrect and need reverting
+      return response.json()
+    }
 
-	return {
-		error: true
-	}
+    return {
+      error: true
+    }
+  }
 }
